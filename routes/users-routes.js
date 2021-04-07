@@ -2,7 +2,7 @@ const express = require("express");
 const { check } = require("express-validator");
 
 //const usersControllers = require("../controllers/users-controllers");
-const { getUsers, signup } = require("../controllers/users-controllers");
+const { getUsers, signup, login } = require("../controllers/users-controllers");
 const router = express.Router();
 
 router.get("/", getUsers);
@@ -15,5 +15,6 @@ router.post(
   ],
   signup
 );
+router.post("/login", login);
 
 module.exports = router;
